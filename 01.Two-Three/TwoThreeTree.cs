@@ -23,6 +23,16 @@
             {
                 return this.MergeNodes(node, new TreeNode<T>(element));
             }
+
+            if (IsLesser(element, node.LeftKey))
+            {
+
+            }
+        }
+
+        private bool IsLesser(T element, T leftKey)
+        {
+            throw new NotImplementedException();
         }
 
         private TreeNode<T> MergeNodes(TreeNode<T> node, TreeNode<T> treeNode)
