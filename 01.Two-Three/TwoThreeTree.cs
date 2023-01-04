@@ -57,6 +57,16 @@
                     current.MiddleChild = node.LeftChild;
                     current.RightChild = node.MiddleChild;
                 }
+                else
+                {
+                    current.RightKey = current.LeftKey;
+                    current.RightChild = current.MiddleChild;
+                    current.MiddleChild = current.LeftChild;
+                    current.LeftChild = node.LeftChild;
+                    current.LeftKey = node.LeftKey;
+                }
+
+                return current;
             }
             else if (IsLesser(node.LeftKey, current.LeftKey))
             {
