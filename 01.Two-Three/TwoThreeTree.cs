@@ -46,9 +46,22 @@
             return element.CompareTo(key) < 0;
         }
 
-        private TreeNode<T> MergeNodes(TreeNode<T> node, TreeNode<T> treeNode)
+        private TreeNode<T> MergeNodes(TreeNode<T> current, TreeNode<T> node)
         {
-            throw new NotImplementedException();
+            if (current.IsTwoNode())
+            {
+                if (IsLesser(current.LeftKey, node.LeftKey))
+                {
+                    current.RightKey = node.LeftKey;
+                    current.LeftKey = node.LeftKey;
+                    current.MiddleChild = node.LeftChild;
+                    current.RightChild = node.MiddleChild;
+                }
+            }
+            else if (IsLesser(node.LeftKey, current.LeftKey))
+            {
+
+            }
         }
 
         public override string ToString()
