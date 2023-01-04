@@ -84,6 +84,20 @@
 
                 return newNode;
             }
+            else if (IsLesser(node.LeftKey, current.RightKey))
+            {
+                node.MiddleChild = new TreeNode<T>(current.RightKey)
+                {
+                    LeftChild = node.MiddleChild,
+                    MiddleChild = current.RightChild
+                };
+
+                node.LeftChild = current;
+                current.RightKey = default;
+                current.RightChild = null;
+
+                return node;
+            }
         }
 
         public override string ToString()
