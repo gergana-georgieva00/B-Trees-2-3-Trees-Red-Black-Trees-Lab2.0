@@ -9,7 +9,7 @@
 
         public void Insert(T element)
         {
-            throw new NotImplementedException();
+            this.root = this.Insert(this.root, element);
         }
 
         public override string ToString()
