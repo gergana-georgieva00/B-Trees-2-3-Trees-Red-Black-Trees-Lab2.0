@@ -53,7 +53,6 @@
                 if (IsLesser(current.LeftKey, node.LeftKey))
                 {
                     current.RightKey = node.LeftKey;
-                    current.LeftKey = node.LeftKey;
                     current.MiddleChild = node.LeftChild;
                     current.RightChild = node.MiddleChild;
                 }
