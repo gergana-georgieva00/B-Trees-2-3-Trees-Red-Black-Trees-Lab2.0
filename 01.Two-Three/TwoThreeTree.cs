@@ -12,7 +12,20 @@
             this.root = this.Insert(this.root, element);
         }
 
-        private TreeNode<T> Insert(TreeNode<T> root, T element)
+        private TreeNode<T> Insert(TreeNode<T> node, T element)
+        {
+            if (node is null)
+            {
+                return new TreeNode<T>(element);
+            }
+
+            if (node.IsLeaf())
+            {
+                return this.MergeNodes(node, new TreeNode<T>(element));
+            }
+        }
+
+        private TreeNode<T> MergeNodes(TreeNode<T> node, TreeNode<T> treeNode)
         {
             throw new NotImplementedException();
         }
