@@ -12,6 +12,11 @@
             this.root = this.Insert(this.root, element);
         }
 
+        private TreeNode<T> Insert(TreeNode<T> root, T element)
+        {
+            throw new NotImplementedException();
+        }
+
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
