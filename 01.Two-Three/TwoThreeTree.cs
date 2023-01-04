@@ -30,9 +30,9 @@
             }
         }
 
-        private bool IsLesser(T element, T leftKey)
+        private bool IsLesser(T element, T key)
         {
-            throw new NotImplementedException();
+            return element.CompareTo(key) < 0;
         }
 
         private TreeNode<T> MergeNodes(TreeNode<T> node, TreeNode<T> treeNode)
