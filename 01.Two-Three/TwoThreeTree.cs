@@ -98,6 +98,20 @@
 
                 return node;
             }
+            else
+            {
+                var newNode = new TreeNode<T>(current.RightKey)
+                {
+                    LeftChild = current,
+                    MiddleChild = node
+                };
+
+                node.LeftChild = current.RightChild;
+                current.RightKey = default;
+                current.RightChild = null;
+
+                return newNode;
+            }
         }
 
         public override string ToString()
