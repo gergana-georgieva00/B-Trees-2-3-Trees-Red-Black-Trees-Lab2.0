@@ -70,7 +70,19 @@
             }
             else if (IsLesser(node.LeftKey, current.LeftKey))
             {
+                var newNode = new TreeNode<T>(current.LeftKey)
+                {
+                    LeftChild = node,
+                    MiddleChild = current
+                };
 
+                current.LeftChild = current.MiddleChild;
+                current.MiddleChild = current.RightChild;
+                current.LeftKey = current.RightKey;
+                current.RightKey = default;
+                current.RightChild = null;
+
+                return newNode;
             }
         }
 
