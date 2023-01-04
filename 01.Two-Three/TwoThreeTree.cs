@@ -60,7 +60,7 @@
                 {
                     current.RightKey = current.LeftKey;
                     current.RightChild = current.MiddleChild;
-                    current.MiddleChild = current.LeftChild;
+                    current.MiddleChild = node.MiddleChild;
                     current.LeftChild = node.LeftChild;
                     current.LeftKey = node.LeftKey;
                 }
