@@ -26,7 +26,8 @@
 
             if (IsLesser(element, node.LeftKey))
             {
-
+                var newNode = this.Insert(node.LeftChild, element);
+                return newNode == node.LeftChild ? node : this.MergeNodes(node, newNode);
             }
         }
 
